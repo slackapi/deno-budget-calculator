@@ -9,7 +9,7 @@ This sample project shows how to manage app deployment with admin approved apps 
 Create a new project using this as repo as a template.
 
 ```bash
-slack create -t slackapi/future-budget-calculator
+slack create -t slackapi/deno-budget-calculator
 ```
 
 ## Running it locally
