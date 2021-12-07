@@ -5,17 +5,20 @@ export const CalculateBudgetRemainder = DefineWorkflow("calculate_budget", {
   title: "Calculate Remaining Budget",
   description: "Calculates your remaining budget from a provided number.",
   input_parameters: {
-    budget: {
-      type: Schema.types.integer,
-      description: "What's your total budget?",
-    },
-    expenses: {
-      type: Schema.types.string,
-      description: "List your expenses, separated by commas",
-    },
-    channel: {
-      type: Schema.slack.types.channel_id,
-      description: "Channel to send remaining budget",
+    required: ["budget", "expenses", "channel"],
+    properties: {
+      budget: {
+        type: Schema.types.integer,
+        description: "What's your total budget?",
+      },
+      expenses: {
+        type: Schema.types.string,
+        description: "List your expenses, separated by commas",
+      },
+      channel: {
+        type: Schema.slack.types.channel_id,
+        description: "Channel to send remaining budget",
+      },
     },
   },
 });
