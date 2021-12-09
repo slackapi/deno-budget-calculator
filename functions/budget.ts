@@ -6,19 +6,25 @@ export const RemainingBudget = DefineFunction(
     title: "Budget Calculator",
     description: "Calculates your remaining budget",
     input_parameters: {
-      budget: {
-        type: Schema.types.integer,
-        description: "The provided budget",
-      },
-      expenses: {
-        type: Schema.types.string,
-        description: "The provided expenses",
+      required: ["budget", "expenses"],
+      properties: {
+        budget: {
+          type: Schema.types.integer,
+          description: "The provided budget",
+        },
+        expenses: {
+          type: Schema.types.string,
+          description: "The provided expenses",
+        },
       },
     },
     output_parameters: {
-      remainder: {
-        type: Schema.types.string,
-        description: "The remaining budget",
+      required: ["remainder"],
+      properties: {
+        remainder: {
+          type: Schema.types.string,
+          description: "The remaining budget",
+        },
       },
     },
   },
